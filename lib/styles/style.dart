@@ -6,8 +6,8 @@ TextStyle buildStyle() {
   return TextStyle(
     color: Colors.green,
     fontWeight: FontWeight.normal,
-    fontFamily: 'Oswald',
+    //fontFamily: 'Oswald',
     fontSize: 15.0,
-    letterSpacing: 2.0,
+    letterSpacing: 3.0,
   );
 }
