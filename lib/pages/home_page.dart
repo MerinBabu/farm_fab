@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/styles/style.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -7,6 +8,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  var temp = {
+    'Simply Wow!': 'i',
+    'Good': 'j',
+    'I love it!': 'k',
+    'Recommended': 'l',
+    'Cryin over it': 'm'
+  };
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -156,6 +164,42 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
+        ),
+        CarouselSlider(
+          options: CarouselOptions(
+            height: 250.0,
+            autoPlay: true,
+            autoPlayInterval: Duration(seconds: 3),
+            enlargeCenterPage: true,
+          ),
+          items: <Container>[
+            buildContainer(
+                text1: 'Simply Wow!',
+                text2: 'Elon Musk, SpaceX Founder',
+                text3: 'SpaceX Founder'),
+            buildContainer(
+                text1: 'I love it',
+                text2: 'Chandler Bing, Friends Actor',
+                text3: 'Friends Actor'),
+            buildContainer(
+                text1: 'Highly recommended',
+                text2: 'Hermione Granger, Fictional character',
+                text3: 'Fictional character'),
+            buildContainer(
+                text1: 'Cryin over it',
+                text2: 'Harry Potter, Fictional character',
+                text3: 'Fictional character'),
+            buildContainer(
+                text1: 'This is awesome!',
+                text2: 'Larry Page, Google Founder',
+                text3: 'Google Founder')
+          ].map((k) {
+            return Builder(
+              builder: (BuildContext context) {
+                return k;
+              },
+            );
+          }).toList(),
         ),
       ]),
     );

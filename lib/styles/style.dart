@@ -62,3 +62,28 @@ Container buildCard({String text, int imgno}) {
     ),
   );
 }
+
+Container buildContainer({String text1, String text2, String text3}) {
+  return Container(
+      width: 1000,
+      margin: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 15.0),
+      decoration: BoxDecoration(color: Colors.grey[100]),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              text1,
+              style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.w500),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Text(
+              '-- ' + text2,
+              style: TextStyle(fontSize: 15.0),
+            ),
+          ],
+        ),
+      ));
+}
