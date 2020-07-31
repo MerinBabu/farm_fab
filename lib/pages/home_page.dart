@@ -18,76 +18,55 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: <Widget>[
-        Container(
-          //margin: EdgeInsets.all(10.0),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black,
-                blurRadius: 5.0,
-              )
-            ],
-          ),
-          //color: Colors.white,
-          height: 70.0,
-          width: MediaQuery.of(context).size.width,
-          child: Row(
-            //mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              Container(
-                color: Colors.white,
-                margin: EdgeInsets.only(left: 200.0),
-                child: FlatButton(
-                  child: Row(children: <Widget>[
-                    Text(
-                      'FARMFAB',
-                      style: TextStyle(
-                        fontFamily: 'Lobster',
-                        fontSize: 30.0,
-                        color: Colors.green,
-                      ),
-                    ),
-                    Icon(
-                      Icons.local_florist,
-                      size: 30.0,
-                      color: Colors.green,
-                    ),
-                  ]),
-                  onPressed: null,
-                ),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        toolbarHeight: 70.0,
+        title: FlatButton(
+          child: Row(children: <Widget>[
+            Text(
+              'FARMFAB',
+              style: TextStyle(
+                fontFamily: 'Lobster',
+                fontSize: 30.0,
+                color: Colors.green,
               ),
-              Container(
-                margin: EdgeInsets.only(left: 300.0),
-                child: Row(
-                  children: <Widget>[
-                    FlatButton(
-                      child: Text('HOME', style: buildStyle()),
-                      onPressed: null,
-                    ),
-                    FlatButton(
-                      child: Text('ABOUT', style: buildStyle()),
-                      onPressed: null,
-                    ),
-                    FlatButton(
-                      child: Text('PRODUCTS', style: buildStyle()),
-                      onPressed: null,
-                    ),
-                    FlatButton(
-                      child: Text('TEAM', style: buildStyle()),
-                      onPressed: null,
-                    ),
-                    FlatButton(
-                      child: Text('CONTACT', style: buildStyle()),
-                      onPressed: null,
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+            Icon(
+              Icons.local_florist,
+              size: 30.0,
+              color: Colors.green,
+            ),
+          ]),
+          onPressed: null,
         ),
+        actions: <Widget>[
+          FlatButton(
+            child: Text('HOME', style: buildStyle()),
+            onPressed: () {
+              print('pressed');
+            },
+          ),
+          FlatButton(
+            child: Text('ABOUT', style: buildStyle()),
+            onPressed: () {
+              print('pressed');
+            },
+          ),
+          FlatButton(
+            child: Text('PRODUCTS', style: buildStyle()),
+            onPressed: null,
+          ),
+          FlatButton(
+            child: Text('TEAM', style: buildStyle()),
+            onPressed: null,
+          ),
+          FlatButton(
+            child: Text('CONTACT', style: buildStyle()),
+            onPressed: null,
+          )
+        ],
+      ),
+      body: ListView(children: <Widget>[
         Container(
           color: Colors.green[500],
           height: 400.0,
@@ -273,44 +252,6 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ]),
-            /*SizedBox(
-              height: 10.0,
-            ),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-              Icon(
-                Icons.email,
-                color: Colors.white54,
-              ),
-              SizedBox(
-                width: 5.0,
-              ),
-              Text(
-                'farmfab@gmail.com',
-                style: TextStyle(
-                  color: Colors.white54,
-                ),
-              )
-            ]),
-            SizedBox(
-              height: 10.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Icon(
-                  Icons.phone_android,
-                  color: Colors.white54,
-                ),
-                SizedBox(
-                  width: 5.0,
-                ),
-                Text(
-                  '+918157893475',
-                  style: TextStyle(color: Colors.white54),
-                )
-              ],
-            )
-          */
           ]),
         ),
       ]),
