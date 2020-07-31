@@ -21,6 +21,9 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         toolbarHeight: 70.0,
+        leading: Container(
+          color: Colors.white,
+        ),
         title: FlatButton(
           child: Row(children: <Widget>[
             Text(
@@ -54,15 +57,15 @@ class _HomeState extends State<Home> {
           ),
           FlatButton(
             child: Text('PRODUCTS', style: buildStyle()),
-            onPressed: null,
+            onPressed: () {},
           ),
           FlatButton(
             child: Text('TEAM', style: buildStyle()),
-            onPressed: null,
+            onPressed: () {},
           ),
           FlatButton(
             child: Text('CONTACT', style: buildStyle()),
-            onPressed: null,
+            onPressed: () {},
           )
         ],
       ),
@@ -97,9 +100,9 @@ class _HomeState extends State<Home> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              buildCard(text: 'Veggies', imgno: 1),
+              buildCard(text: 'Veggies', imgno: 4),
               buildCard(text: 'Grow bags', imgno: 2),
-              buildCard(text: 'Equipments', imgno: 3),
+              buildCard(text: 'Equipments', imgno: 5),
             ],
           ),
         ),
