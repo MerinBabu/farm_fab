@@ -63,7 +63,7 @@ Container buildCard({String text, int imgno}) {
   );
 }
 
-Container buildContainer({String text1, String text2, String text3}) {
+Container buildContainer({String text1, String text2}) {
   return Container(
       width: 1000,
       margin: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 15.0),

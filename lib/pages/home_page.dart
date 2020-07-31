@@ -174,25 +174,23 @@ class _HomeState extends State<Home> {
           ),
           items: <Container>[
             buildContainer(
-                text1: 'Simply Wow!',
-                text2: 'Elon Musk, SpaceX Founder',
-                text3: 'SpaceX Founder'),
+                text1: 'Simply Wow!', text2: 'Elon Musk, SpaceX Founder'),
             buildContainer(
-                text1: 'I love it',
-                text2: 'Chandler Bing, Friends Actor',
-                text3: 'Friends Actor'),
+              text1: 'I love it',
+              text2: 'Chandler Bing, Friends Actor',
+            ),
             buildContainer(
-                text1: 'Highly recommended',
-                text2: 'Hermione Granger, Fictional character',
-                text3: 'Fictional character'),
+              text1: 'Highly recommended',
+              text2: 'Hermione Granger, Fictional character',
+            ),
             buildContainer(
-                text1: 'Cryin over it',
-                text2: 'Harry Potter, Fictional character',
-                text3: 'Fictional character'),
+              text1: 'Cryin over it',
+              text2: 'Harry Potter, Fictional character',
+            ),
             buildContainer(
-                text1: 'This is awesome!',
-                text2: 'Larry Page, Google Founder',
-                text3: 'Google Founder')
+              text1: 'This is awesome!',
+              text2: 'Larry Page, Google Founder',
+            )
           ].map((k) {
             return Builder(
               builder: (BuildContext context) {
@@ -200,6 +198,120 @@ class _HomeState extends State<Home> {
               },
             );
           }).toList(),
+        ),
+        SizedBox(
+          height: 20.0,
+        ),
+        Container(
+          color: Colors.black87,
+          height: 200.0,
+          width: MediaQuery.of(context).size.width,
+          child: Column(children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 40.0),
+              child: Text(
+                'CONTACT',
+                style: TextStyle(
+                  color: Colors.white54,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Icon(
+                    Icons.email,
+                    color: Colors.white54,
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Icon(
+                    Icons.phone_android,
+                    color: Colors.white54,
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Icon(
+                    Icons.location_on,
+                    color: Colors.white54,
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 15.0,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'farmfab@gmail.com',
+                    style: TextStyle(
+                      color: Colors.white54,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15.0,
+                  ),
+                  Text(
+                    '+918157893475',
+                    style: TextStyle(color: Colors.white54),
+                  ),
+                  SizedBox(
+                    height: 15.0,
+                  ),
+                  Text(
+                    'Kochi, Kerala',
+                    style: TextStyle(color: Colors.white54),
+                  ),
+                ],
+              ),
+            ]),
+            /*SizedBox(
+              height: 10.0,
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+              Icon(
+                Icons.email,
+                color: Colors.white54,
+              ),
+              SizedBox(
+                width: 5.0,
+              ),
+              Text(
+                'farmfab@gmail.com',
+                style: TextStyle(
+                  color: Colors.white54,
+                ),
+              )
+            ]),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Icon(
+                  Icons.phone_android,
+                  color: Colors.white54,
+                ),
+                SizedBox(
+                  width: 5.0,
+                ),
+                Text(
+                  '+918157893475',
+                  style: TextStyle(color: Colors.white54),
+                )
+              ],
+            )
+          */
+          ]),
         ),
       ]),
     );
