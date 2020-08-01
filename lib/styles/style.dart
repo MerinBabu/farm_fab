@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
+//import 'package:flutter_web/pages/home_page.dart';
 
 TextStyle buildStyle() {
   return TextStyle(
@@ -86,4 +86,58 @@ Container buildContainer({String text1, String text2}) {
           ],
         ),
       ));
+}
+
+AppBar buildAppBar(BuildContext context) {
+  return AppBar(
+    backgroundColor: Colors.white,
+    toolbarHeight: 70.0,
+    leading: Container(
+      color: Colors.white,
+    ),
+    title: FlatButton(
+      child: Row(children: <Widget>[
+        Text(
+          'FARMFAB',
+          style: TextStyle(
+            fontFamily: 'Lobster',
+            fontSize: 30.0,
+            color: Colors.green,
+          ),
+        ),
+        Icon(
+          Icons.local_florist,
+          size: 30.0,
+          color: Colors.green,
+        ),
+      ]),
+      onPressed: null,
+    ),
+    actions: <Widget>[
+      FlatButton(
+        child: Text('HOME', style: buildStyle()),
+        onPressed: () {
+          Navigator.pushNamed(context, '/');
+        },
+      ),
+      FlatButton(
+        child: Text('ABOUT', style: buildStyle()),
+        onPressed: () {
+          Navigator.pushNamed(context, '/about');
+        },
+      ),
+      FlatButton(
+        child: Text('PRODUCTS', style: buildStyle()),
+        onPressed: () {},
+      ),
+      FlatButton(
+        child: Text('TEAM', style: buildStyle()),
+        onPressed: () {},
+      ),
+      FlatButton(
+        child: Text('CONTACT', style: buildStyle()),
+        onPressed: () {},
+      )
+    ],
+  );
 }

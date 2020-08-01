@@ -8,67 +8,10 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  var temp = {
-    'Simply Wow!': 'i',
-    'Good': 'j',
-    'I love it!': 'k',
-    'Recommended': 'l',
-    'Cryin over it': 'm'
-  };
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        toolbarHeight: 70.0,
-        leading: Container(
-          color: Colors.white,
-        ),
-        title: FlatButton(
-          child: Row(children: <Widget>[
-            Text(
-              'FARMFAB',
-              style: TextStyle(
-                fontFamily: 'Lobster',
-                fontSize: 30.0,
-                color: Colors.green,
-              ),
-            ),
-            Icon(
-              Icons.local_florist,
-              size: 30.0,
-              color: Colors.green,
-            ),
-          ]),
-          onPressed: null,
-        ),
-        actions: <Widget>[
-          FlatButton(
-            child: Text('HOME', style: buildStyle()),
-            onPressed: () {
-              print('pressed');
-            },
-          ),
-          FlatButton(
-            child: Text('ABOUT', style: buildStyle()),
-            onPressed: () {
-              print('pressed');
-            },
-          ),
-          FlatButton(
-            child: Text('PRODUCTS', style: buildStyle()),
-            onPressed: () {},
-          ),
-          FlatButton(
-            child: Text('TEAM', style: buildStyle()),
-            onPressed: () {},
-          ),
-          FlatButton(
-            child: Text('CONTACT', style: buildStyle()),
-            onPressed: () {},
-          )
-        ],
-      ),
+      appBar: buildAppBar(context),
       body: ListView(children: <Widget>[
         Container(
           color: Colors.green[500],
