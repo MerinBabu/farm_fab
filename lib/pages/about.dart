@@ -11,6 +11,7 @@ class _AboutState extends State<About> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
+      body: ListView(),
     );
   }
 }

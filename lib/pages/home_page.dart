@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_web/styles/style.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -14,14 +16,23 @@ class _HomeState extends State<Home> {
       appBar: buildAppBar(context),
       body: ListView(children: <Widget>[
         Container(
-          color: Colors.green[500],
+          //color: Colors.white,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/img6.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
           height: 400.0,
           width: MediaQuery.of(context).size.width,
-          child: Center(
-            child: Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-              textAlign: TextAlign.justify,
-              style: TextStyle(color: Colors.white, fontSize: 33.0),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
+            child: Center(
+              child: Text(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, \nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                textAlign: TextAlign.justify,
+                style: TextStyle(color: Colors.white, fontSize: 33.0),
+              ),
             ),
           ),
         ),
