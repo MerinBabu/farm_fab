@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_animations/simple_animations.dart';
+import 'package:sa_v1_migration/sa_v1_migration.dart';
 //import 'package:flutter_web/pages/home_page.dart';
 
 TextStyle buildStyle() {
@@ -140,4 +142,43 @@ AppBar buildAppBar(BuildContext context) {
       )
     ],
   );
+}
+
+enum Aniprops { opacity, translateX }
+
+class FadeIn extends StatelessWidget {
+  final double delay;
+  final Widget child;
+  //enum Aniprops {opacity,translateX}
+
+  FadeIn(this.delay, this.child);
+  //enum Aniprops {opacity,translateX}
+
+  @override
+  Widget build(BuildContext context) {
+    //enum Aniprops {opacity,translateX}
+    final _tween = MultiTween<Aniprops>()
+      // ignore: deprecated_member_use
+      ..add(
+        Aniprops.opacity,
+        Tween(begin: 0.0, end: 1.0),
+        Duration(milliseconds: 500),
+      )
+      ..add(Aniprops.translateX, Tween(begin: 500.0, end: 100.0),
+          Duration(milliseconds: 500));
+    //curve: Curves.easeOut);
+    // ..add(Aniprops.translateX,500.milliseconds, Tween(begin: 130.0, end: 0.0),curve: Curves.easeOut);
+
+    return CustomAnimation(
+      delay: Duration(milliseconds: (300 * delay).round()),
+      duration: _tween.duration,
+      tween: _tween,
+      child: child,
+      builder: (context, child, value) => Opacity(
+        opacity: value.get(Aniprops.opacity),
+        child: Transform.translate(
+            offset: Offset(value.get(Aniprops.translateX), 0), child: child),
+      ),
+    );
+  }
 }
