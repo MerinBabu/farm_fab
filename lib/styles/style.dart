@@ -14,7 +14,7 @@ TextStyle buildStyle() {
   );
 }
 
-Container buildCard({String text, int imgno}) {
+Container buildCard({String text, int imgno, BuildContext context}) {
   return Container(
     height: 450.0,
     width: 320.0,
@@ -52,7 +52,9 @@ Container buildCard({String text, int imgno}) {
             height: 15.0,
           ),
           RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/products');
+            },
             color: Colors.blue,
             child: Text(
               'Know more',
@@ -98,6 +100,9 @@ AppBar buildAppBar(BuildContext context) {
       color: Colors.white,
     ),
     title: FlatButton(
+      splashColor: Colors.transparent,
+      hoverColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       child: Row(children: <Widget>[
         Text(
           'FARMFAB',
@@ -113,7 +118,9 @@ AppBar buildAppBar(BuildContext context) {
           color: Colors.green,
         ),
       ]),
-      onPressed: null,
+      onPressed: () {
+        Navigator.pushNamed(context, '/');
+      },
     ),
     actions: <Widget>[
       FlatButton(
@@ -130,7 +137,9 @@ AppBar buildAppBar(BuildContext context) {
       ),
       FlatButton(
         child: Text('PRODUCTS', style: buildStyle()),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/products');
+        },
       ),
       FlatButton(
         child: Text('TEAM', style: buildStyle()),

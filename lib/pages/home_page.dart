@@ -54,9 +54,9 @@ class _HomeState extends State<Home> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              buildCard(text: 'Veggies', imgno: 4),
-              buildCard(text: 'Grow bags', imgno: 2),
-              buildCard(text: 'Equipments', imgno: 5),
+              buildCard(text: 'Veggies', imgno: 4, context: context),
+              buildCard(text: 'Grow bags', imgno: 2, context: context),
+              buildCard(text: 'Equipments', imgno: 5, context: context),
             ],
           ),
         ),
