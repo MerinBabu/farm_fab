@@ -113,7 +113,7 @@ class _HomeState extends State<Home> {
                 text1: 'Simply Wow!', text2: 'Elon Musk, SpaceX Founder'),
             buildContainer(
               text1: 'I love it',
-              text2: 'Chandler Bing, Friends Actor',
+              text2: 'Carly Tomkins, Zeus Actor',
             ),
             buildContainer(
               text1: 'Highly recommended',
