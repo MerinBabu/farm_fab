@@ -143,7 +143,9 @@ AppBar buildAppBar(BuildContext context) {
       ),
       FlatButton(
         child: Text('TEAM', style: buildStyle()),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/team');
+        },
       ),
       FlatButton(
         child: Text('CONTACT', style: buildStyle()),
@@ -190,4 +192,78 @@ class FadeIn extends StatelessWidget {
       ),
     );
   }
+}
+
+Container buildTeamCard(
+    {String text1, String text2, int imgno, BuildContext context}) {
+  return Container(
+    height: 400.0,
+    width: 280.0,
+    child: Card(
+      margin: EdgeInsets.zero,
+      child: Column(
+        children: <Widget>[
+          SizedBox(height: 20.0),
+          Image(
+            //color: Colors.red,
+            //colorBlendMode: BlendMode.multiply,
+            image: AssetImage('assets/images/img$imgno.jpg'),
+            height: 225,
+            width: 225,
+            fit: BoxFit.cover,
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Text(
+            text1,
+            style: TextStyle(
+                fontSize: 15.0,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'OpenSans'),
+          ),
+          SizedBox(
+            height: 5.0,
+          ),
+          Text(
+            text2,
+            style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'OpenSans'),
+          ),
+          SizedBox(
+            height: 5.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FlatButton(
+                  onPressed: () {},
+                  child: Image.asset(
+                    'assets/images/linkedin.png',
+                    height: 20.0,
+                    width: 20.0,
+                  )),
+              FlatButton(
+                onPressed: () {},
+                child: Image.asset(
+                  'assets/images/facebook.jpg',
+                  height: 20.0,
+                  width: 20.0,
+                ),
+              ),
+              FlatButton(
+                  onPressed: () {},
+                  child: Image.asset(
+                    'assets/images/twitter.png',
+                    height: 20.0,
+                    width: 20.0,
+                  )),
+            ],
+          )
+        ],
+      ),
+    ),
+  );
 }
